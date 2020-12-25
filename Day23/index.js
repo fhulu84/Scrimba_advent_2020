@@ -22,9 +22,7 @@ const cntFooter = document.getElementById('counterFooter');
 const btn = document.getElementById('btn');
 const text = document.getElementById('text');
 
-text.addEventListener('keydown', show);
-// to track typed chars properly, textarea value is updated onkeyup
-text.addEventListener('keyup', show);
+text.addEventListener('input', show);
 
 function show(){
   let cntCharsLeft = 140 - text.value.length;
@@ -46,5 +44,6 @@ btn.addEventListener('click', function(event){
   if (event.target.classList.contains('buttonDisabled')) {
     event.preventDefault();
   }
+  let hashtags = 
   btn.href = `https://twitter.com/intent/tweet?text=${text.value}&hashtags=JavaScriptmas`;
 })
